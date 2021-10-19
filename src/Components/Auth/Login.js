@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 import useFirebase from "../../hooks/firebase";
+import { useHistory } from "react-router";
+import { getAuth, signInWithEmailAndPassword } from "@firebase/auth";
 
 const Login = () => {
-	const { signInWithGoogleAuth, user} = useFirebase();
+	const [email, setEmail] = useState("");
+	const [pass, setPass] = useState("");
+	const auth = getAuth();
+
+	const history = useHistory();
+	const { signInWithGoogleAuth, user } = useFirebase();
+
+	const handleEmailChange = (e) => {
+		setEmail(e.target.value);
+	};
+	const handlePasswordChange = (e) => {
+		setPass(e.target.value);
+	};
+	const handleLogin = (e) => {
+		signInWithEmailAndPassword(auth, email, pass).then((userCredential) => {
+			// Signed in
+			const user = userCredential.user;
+			console.log(user)
+			// ...
+		});
+	};
 
 	return (
 		<div className="login-container">
@@ -14,17 +36,19 @@ const Login = () => {
 			<div className="login-form">
 				<div>
 					<form action="">
-						<input type="email" name="email" placeholder="Enter your email" />
+						<input onChange={handleEmailChange} type="email" name="email" placeholder="Enter your email" />
 
 						<input
+							onBlur={handlePasswordChange}
 							type="password"
 							name="password"
 							placeholder="Enter your Password"
 						/>
 
-						<input
+						<input 
+							onClick={handleLogin}
 							className="btn btn-sm btn-danger text-white"
-							type="submit"
+							type="button"
 							value="submit"
 						/>
 						<div>
@@ -33,9 +57,10 @@ const Login = () => {
 								onClick={signInWithGoogleAuth}
 								className="btn btn-sm btn-danger text-white"
 							>
+								{user.email ? history.push("/") : history.push("/login")}
 								<i class="fab fa-google"> google </i>
 							</button>
-						
+
 							<button
 								type="button"
 								className="btn btn-sm btn-danger text-white"

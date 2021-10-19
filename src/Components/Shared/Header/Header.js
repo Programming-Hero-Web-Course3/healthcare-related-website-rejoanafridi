@@ -3,7 +3,7 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import useFirebase from "../../../hooks/firebase";
 const Header = () => {
-	const { logOut,user } = useFirebase();
+	const { logOut, user } = useFirebase();
 	return (
 		<div>
 			<nav>
@@ -26,18 +26,29 @@ const Header = () => {
 						<Link to="/booking">Booking</Link>
 					</div>
 					<div className="login">
-						{user.email ? 
+						{user.email ? (
 							<>
-							<p>Hi,{user.displayName}!</p>
-							<button className="btn btn-danger text-white btn-sm"onClick={logOut} type="button">Logout</button>
-						</>
-						
-						:
-						<Link to="/login">
-							{" "}
-							<i class="fas fa-sign-in-alt"> Login </i>{" "}
-							
-						</Link>}
+								<p>Hi,{user.email}!</p>
+								<button
+									className="btn btn-danger text-white btn-sm"
+									onClick={logOut}
+									type="button"
+								>
+									Logout
+								</button>
+							</>
+						) : (
+							<>
+								<Link to="/login">
+									{" "}
+									<i class="fas fa-sign-in-alt"> Login </i>{" "}
+								</Link>
+								<Link to="/register">
+									{" "}
+									<i class="fas fa-sign-in-alt"> Sign Up </i>{" "}
+								</Link>
+							</>
+						)}
 					</div>
 				</div>
 			</nav>
