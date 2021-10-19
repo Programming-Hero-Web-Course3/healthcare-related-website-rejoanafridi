@@ -1,8 +1,11 @@
 import React from "react";
 import './Feature.css';
 import d_Img from '../../images/doctor.jpg'
+import Header from "../Shared/Header/Header";
+import Footer from "../Shared/Footer/Footer";
 const Feature = () => {
 	return <div>
+		<Header></Header>
 		<div className="d-container">
 				<h1>Our <span> Doctors </span> </h1>
 			<div className="doctors">
@@ -96,6 +99,7 @@ const Feature = () => {
 				</div>
 			</div>
 		</div>
+		<Footer></Footer>
 		</div>;
 };
 

@@ -1,9 +1,12 @@
 import React from "react";
 import a_Img from "../../../images/about.jpg";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 import './About.css'
 const about = () => {
 	return (
 		<div>
+			<Header></Header>
 			<div className="about-container">
 				<h1>
 					{" "}
@@ -24,6 +27,7 @@ const about = () => {
 					</div>
 				</div>
 			</div>
+			<Footer></Footer>
 		</div>
 	);
 };
