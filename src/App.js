@@ -1,12 +1,13 @@
 import React from "react";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Service from "./Components/Service/Service";
 import About from "./Components/Shared/About/About";
 import Book from "./Components/Booking/Book";
 import Login from "./Components/Auth/Login";
 import Feature from "./Components/Home/Feature";
 import Home from "./Components/Home/Home";
+import Register from "./Components/Auth/Register";
 
 const App = () => {
 	return (
@@ -36,6 +37,9 @@ const App = () => {
 					</Route>
 					<Route path="/login">
 						<Login></Login>
+					</Route>
+					<Route path="/register">
+						<Register></Register>
 					</Route>
 				</Switch>
 			</Router>

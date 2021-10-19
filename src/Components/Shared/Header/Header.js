@@ -1,25 +1,43 @@
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import useFirebase from "../../../hooks/firebase";
 const Header = () => {
+	const { logOut,user } = useFirebase();
 	return (
 		<div>
-			<nav className="container">
+			<nav>
 				<div className="logo">
 					<Link to="/">
-					 	Doc-<span>Care <i class="fas fa-user-md"></i></span>{" "}
+						Doc-
+						<span>
+							Care <i class="fas fa-user-md"></i>
+						</span>{" "}
 					</Link>
 				</div>
 				<div className="nav-items">
 					<div className="item">
-						<Link className="active" to="/home">Home</Link>
+						<Link className="active" to="/home">
+							Home
+						</Link>
 						<Link to="/services">Services</Link>
 						<Link to="/about">About</Link>
 						<Link to="/features">Features</Link>
 						<Link to="/booking">Booking</Link>
 					</div>
 					<div className="login">
-						<Link to="/login"> <i class="fas fa-sign-in-alt"> Login </i> </Link>
+						{user.email ? 
+							<>
+							<p>Hi,{user.displayName}!</p>
+							<button className="btn btn-danger text-white btn-sm"onClick={logOut} type="button">Logout</button>
+						</>
+						
+						:
+						<Link to="/login">
+							{" "}
+							<i class="fas fa-sign-in-alt"> Login </i>{" "}
+							
+						</Link>}
 					</div>
 				</div>
 			</nav>
