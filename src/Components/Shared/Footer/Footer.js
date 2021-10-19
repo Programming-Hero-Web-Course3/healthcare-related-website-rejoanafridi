@@ -7,7 +7,7 @@ const Footer = () => {
 				<div className="col-3">
 					<div className="logo">
 						<p>
-							Doc-
+							Doctor-
 							<span>
 								Care <i class="fas fa-user-md"></i>
 							</span>{" "}

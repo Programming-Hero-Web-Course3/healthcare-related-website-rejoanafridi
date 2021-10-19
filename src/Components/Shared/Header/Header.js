@@ -9,7 +9,7 @@ const Header = () => {
 			<nav>
 				<div className="logo">
 					<Link to="/">
-						Doc-
+						Doctor-
 						<span>
 							Care <i class="fas fa-user-md"></i>
 						</span>{" "}
