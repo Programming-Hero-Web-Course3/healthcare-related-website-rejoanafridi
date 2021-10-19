@@ -1,12 +1,10 @@
 import React from "react";
-import Footer from "../Shared/Footer/Footer";
-import Header from "../Shared/Header/Header";
 
 import "./Service.css";
 const Service = () => {
 	return (
 		<div>
-               <Header></Header>
+               
 			<section className="service-container">
 				<h1 className="service-title">Our <span>Service</span> </h1>
 				<div className="items">
@@ -91,7 +89,7 @@ const Service = () => {
 				</div>
 			</section>
 
-		<Footer></Footer>
+		
 		</div>
 	);
 };

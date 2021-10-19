@@ -8,12 +8,14 @@ import Login from "./Components/Auth/Login";
 import Feature from "./Components/Home/Feature";
 import Home from "./Components/Home/Home";
 import Register from "./Components/Auth/Register";
+import Header from "./Components/Shared/Header/Header";
+import Footer from "./Components/Shared/Footer/Footer";
 
 const App = () => {
 	return (
 		<div>
 			<Router>
-			
+				<Header></Header>
 
 				<Switch>
 					<Route path="/home">
@@ -43,6 +45,7 @@ const App = () => {
 					</Route>
 				</Switch>
 			</Router>
+			<Footer></Footer>
 		</div>
 	);
 };

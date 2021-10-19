@@ -9,7 +9,7 @@ import About from "../Shared/About/About";
 const Home = () => {
 	return (
 		<div>
-			<Header></Header>
+			
 			
 			<section className="banner">
 				<div className="b_image">
@@ -35,7 +35,7 @@ const Home = () => {
                {/* About us */}
                <About></About>
 
-			<Footer></Footer>
+		
 		</div>
 	);
 };
