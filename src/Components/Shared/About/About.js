@@ -1,5 +1,6 @@
 import React from "react";
-
+import a_Img from "../../../images/about.jpg";
+import './About.css'
 const about = () => {
 	return (
 		<div>
@@ -10,12 +11,12 @@ const about = () => {
 				</h1>
 				<div className="abouts">
 					<div className="about">
-						<img src="" alt="" />
+						<img className="a_img" src={a_Img} alt="" />
 					</div>
 					<div className="about">
 						<div>
-                                   <h2>We Take Care of your Healthy</h2>
-                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat sed earum mollitia non libero repellat magnam placeat pariatur odio inventore.</p>
+                                   <h1>We Take Care of <br /> your Healthy</h1>
+                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat sed earum mollitia <br /> non libero repellat magnam placeat pariatur odio inventore.</p>
                                    <button className="btn btn-sm btn-danger text-white " >
                                         learn more <i class="fas fa-angle-right"> </i>
                                    </button>

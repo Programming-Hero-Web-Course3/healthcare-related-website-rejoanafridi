@@ -5,6 +5,7 @@ import bannerImg from "../../images/banner-doctor.png";
 import "./Home.css";
 import Service from "../Service/Service";
 import Doctor from "../Home/Feature";
+import About from "../Shared/About/About";
 const Home = () => {
 	return (
 		<div>
@@ -31,7 +32,8 @@ const Home = () => {
 
                {/* Doctors */}
                <Doctor> </Doctor>
-
+               {/* About us */}
+               <About></About>
 
 			<Footer></Footer>
 		</div>
