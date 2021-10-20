@@ -1,27 +1,29 @@
-import React from "react";
-import './Servicedetails.css'
-import s_Img from "../../images/doctor.jpg"
+import React, { useEffect, useState } from "react";
+import "./Servicedetails.css";
+// import s_Img from "../../images/doctor.jpg";
+import { useParams } from "react-router";
+import Details from "./Details";
 const Servicedetails = () => {
+	const { id } = useParams();
+	const [service, setService] = useState([]);
+	const [single, setSingle] = useState([]);
+	useEffect(() => {
+		fetch("service.json")
+			.then((res) => res.json())
+			.then((data) => setService(data))
+	}, [id]);
+	useEffect(() => {
+		const value = service.filter((d) => d.id == id);
+		setSingle(value);
+	}, [service]);
 	return (
 		<div>
 			<div className="s-container">
 				<div className="service-details">
-					<div className="service-detail">
-						<div>
-							<img src={s_Img} alt="" />
-							<h3>Doctor</h3>
-							<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-							<h5>Description</h5>
-							<p>
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-								Dolorum ipsa dicta iusto reiciendis magni hic voluptates eum
-								quos laborum aliquam.
-							</p>
-							<button className="btn btn-sm btn-danger text-white ">
-								Appointment
-							</button>
-						</div>
-					</div>
+				{single.map((data) => (
+							<Details key={data.id} data={data}></Details>
+						))}
+					
 				</div>
 			</div>
 		</div>
