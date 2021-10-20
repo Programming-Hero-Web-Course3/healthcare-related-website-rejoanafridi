@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Service from "./Components/Service/Service";
@@ -13,6 +13,12 @@ import Footer from "./Components/Shared/Footer/Footer";
 import Servicedetails from "./Components/Service/Servicedetails";
 
 const App = () => {
+	const [services, setServices] = useState([])
+	useEffect(() => {
+		fetch('service.json')
+		  .then(res => res.json())
+		  .then(data => setServices(data))
+	   }, [])
 	return (
 		<div>
 			<Router>
@@ -27,7 +33,7 @@ const App = () => {
 					</Route>
 
 					<Route path="/services">
-						<Service></Service>
+						<Service services={services}></Service>
 					</Route>
 					<Route path="/about">
 						<About></About>

@@ -1,13 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,  useParams } from "react-router-dom";
+
 
 import "./Service.css";
-const Service = () => {
+const Service = ({services}) => {
+
+	console.log(services)
+	services.map(data => console.log(data.name))
+
 	return (
 		<div>
-               
 			<section className="service-container">
-				<h1 className="service-title">Our <span>Service</span> </h1>
+				<h1 className="service-title">
+					Our <span>Service</span>{" "}
+				</h1>
 				<div className="items">
 					<div className="item">
 						<div>
@@ -19,7 +25,7 @@ const Service = () => {
 							</p>
 							<div className="btn btn-small btn-danger text-white">
 								<Link to="/service-details">Checkup now</Link>
-								 <i class="fas fa-arrow-right"></i>
+								<i class="fas fa-arrow-right"></i>
 							</div>
 						</div>
 					</div>
@@ -90,8 +96,6 @@ const Service = () => {
 					</div>
 				</div>
 			</section>
-
-		
 		</div>
 	);
 };
