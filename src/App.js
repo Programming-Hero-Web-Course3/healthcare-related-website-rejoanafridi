@@ -11,29 +11,34 @@ import Register from "./Components/Auth/Register";
 import Header from "./Components/Shared/Header/Header";
 import Footer from "./Components/Shared/Footer/Footer";
 import Servicedetails from "./Components/Service/Servicedetails";
+import Notfound from "./Components/Auth/NotFound/Notfound";
 
 const App = () => {
-	const [services, setServices] = useState([])
+	const [data, setData] = useState([]);
+	// console.log(service);
 	useEffect(() => {
-		fetch('service.json')
-		  .then(res => res.json())
-		  .then(data => setServices(data))
-	   }, [])
+		fetch("service.json")
+			.then((res) => res.json())
+			.then((data) => setData(data));
+	}, []);
 	return (
 		<div>
 			<Router>
 				<Header></Header>
 
 				<Switch>
-					<Route path="/home">
+					<Route exact path="/">
 						<Home></Home>
 					</Route>
-					<Route exact path="/">
+					<Route path="/home">
 						<Home></Home>
 					</Route>
 
 					<Route path="/services">
-						<Service services={services}></Service>
+						<Service data={data}></Service>
+					</Route>
+					<Route path="/service-details/:serviceId">
+						<Servicedetails></Servicedetails>
 					</Route>
 					<Route path="/about">
 						<About></About>
@@ -53,7 +58,9 @@ const App = () => {
 					<Route path="/service-details">
 						<Servicedetails></Servicedetails>
 					</Route>
-
+					<Route path="*">
+						<Notfound></Notfound>
+					</Route>
 				</Switch>
 			</Router>
 			<Footer></Footer>

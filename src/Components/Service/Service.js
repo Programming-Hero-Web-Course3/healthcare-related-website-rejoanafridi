@@ -1,12 +1,17 @@
 import React from "react";
-import { Link,  useParams } from "react-router-dom";
-
+import { Link, useParams } from "react-router-dom";
 
 import "./Service.css";
-const Service = ({services}) => {
+import Services from "./Services";
+const Service = (service) => {
+	// const { id, name,  description, img, short } = service;
+	// console.log(name);
 
-	console.log(services)
-	services.map(data => console.log(data.name))
+	// console.log(service)
+	// const { name} = service;
+	// console.log(name)
+	console.log(service.data);
+	const service_data = service.data;
 
 	return (
 		<div>
@@ -15,85 +20,11 @@ const Service = ({services}) => {
 					Our <span>Service</span>{" "}
 				</h1>
 				<div className="items">
-					<div className="item">
-						<div>
-							<i class="fas fa-user-check fa-5x"></i>
-							<h3>Free Checkup</h3>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-								quasi.
-							</p>
-							<div className="btn btn-small btn-danger text-white">
-								<Link to="/service-details">Checkup now</Link>
-								<i class="fas fa-arrow-right"></i>
-							</div>
-						</div>
-					</div>
-					<div className="item">
-						<div>
-							<i class="fas fa-capsules fa-5x"></i>
-							<h3>Free Medicine</h3>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-								quasi.
-							</p>
-							<div className="btn btn-small btn-danger text-white">
-								Checkup now <i class="fas fa-arrow-right"></i>
-							</div>
-						</div>
-					</div>
-					<div className="item">
-						<div>
-							<i class="fas fa-ambulance fa-5x"></i>
-							<h3>24/7 Ambulance</h3>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-								quasi.
-							</p>
-							<div className="btn btn-small btn-danger text-white">
-								Checkup now <i class="fas fa-arrow-right"></i>
-							</div>
-						</div>
-					</div>
-					<div className="item">
-						<div>
-							<i class="fas fa-utensils fa-5x"></i>
-							<h3>Healthy Food</h3>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-								quasi.
-							</p>
-							<div className="btn btn-small btn-danger text-white">
-								Checkup now <i class="fas fa-arrow-right"></i>
-							</div>
-						</div>
-					</div>
-					<div className="item">
-						<div>
-							<i class="fas fa-user-md fa-5x"></i>
-							<h3>Experianced Doctor</h3>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-								quasi.
-							</p>
-							<div className="btn btn-small btn-danger text-white">
-								Checkup now <i class="fas fa-arrow-right"></i>
-							</div>
-						</div>
-					</div>
-					<div className="item">
-						<div>
-							<i class="fas fa-bed fa-5x"></i>
-							<h3>Bed Facility</h3>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-								quasi.
-							</p>
-							<div className="btn btn-small btn-danger text-white">
-								Checkup now <i class="fas fa-arrow-right"></i>
-							</div>
-						</div>
-					</div>
+					{/* {service_data.map((s) => (
+						<Services key={s.id} serv={s}></Services>
+					))} */}
+
+					
 				</div>
 			</section>
 		</div>
