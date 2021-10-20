@@ -10,6 +10,7 @@ import Home from "./Components/Home/Home";
 import Register from "./Components/Auth/Register";
 import Header from "./Components/Shared/Header/Header";
 import Footer from "./Components/Shared/Footer/Footer";
+import Servicedetails from "./Components/Service/Servicedetails";
 
 const App = () => {
 	return (
@@ -43,6 +44,10 @@ const App = () => {
 					<Route path="/register">
 						<Register></Register>
 					</Route>
+					<Route path="/service-details">
+						<Servicedetails></Servicedetails>
+					</Route>
+
 				</Switch>
 			</Router>
 			<Footer></Footer>

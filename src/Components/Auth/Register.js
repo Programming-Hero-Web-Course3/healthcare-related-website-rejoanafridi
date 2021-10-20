@@ -72,20 +72,13 @@ const Register = () => {
 							>
 								<i class="fab fa-google"></i> google{" "}
 							</button>
-							<button
-								type="button"
-								className="btn btn-sm btn-danger text-white"
-							>
-								<i class="fab fa-github"></i> github{" "}
-							</button>
+						
 						</div>
-
+						<div>-------------------------  or  ----------------------------</div>
 						<p>
 							already registered <Link to="/login">Login here</Link>{" "}
 						</p>
-						<p>
-							Back to <Link to="/">Home</Link>{" "}
-						</p>
+					
 					</form>
 				</div>
 			</div>

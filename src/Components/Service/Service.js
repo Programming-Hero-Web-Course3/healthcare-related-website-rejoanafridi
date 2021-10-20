@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./Service.css";
 const Service = () => {
@@ -17,7 +18,8 @@ const Service = () => {
 								quasi.
 							</p>
 							<div className="btn btn-small btn-danger text-white">
-								Checkup now <i class="fas fa-arrow-right"></i>
+								<Link to="/service-details">Checkup now</Link>
+								 <i class="fas fa-arrow-right"></i>
 							</div>
 						</div>
 					</div>

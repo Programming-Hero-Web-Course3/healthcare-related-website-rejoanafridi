@@ -61,19 +61,12 @@ const Login = () => {
 								<i class="fab fa-google"> google </i>
 							</button>
 
-							<button
-								type="button"
-								className="btn btn-sm btn-danger text-white"
-							>
-								<i class="fab fa-github"></i> github{" "}
-							</button>
+							<div>-------------------------- or  ------------------------------</div>
 						</div>
 						<p>
 							don't have an account <Link to="/register">register here</Link>{" "}
 						</p>
-						<p>
-							Back to <Link to="/">Home</Link>{" "}
-						</p>
+						
 					</form>
 				</div>
 			</div>
