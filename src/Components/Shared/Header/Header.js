@@ -23,9 +23,13 @@ const Header = () => {
 						<Link to="/services">Services</Link>
 						<Link to="/about">About</Link>
 						<Link to="/doctors">Doctors</Link>
-						<Link to="/booking">Booking</Link>
+						{/* check user logging or not!! */}
+						{user.email ? (
+							<Link to="/booking">Booking</Link>
+						) : <Link to="/login">Booking</Link>}
 					</div>
 					<div className="login">
+						{/* check user logging or not!! */}
 						{user.email ? (
 							<>
 								<p>Hi,{user.email}!</p>

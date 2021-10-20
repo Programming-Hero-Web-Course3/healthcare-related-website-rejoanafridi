@@ -17,12 +17,14 @@ const provider = new GoogleAuthProvider();
 const useFirebase = () => {
 	const [user, setUser] = useState({});
 	const [error, setError] = useState({});
+	const [isLoading, setLoading] = useState(true);
 	const auth = getAuth();
 	const email = auth.email;
 	const password = auth.password;
 	console.log(auth);
 
 	const signInWithGoogleAuth = () => {
+		setLoading(true);
 		
 		signInWithPopup(auth, provider)
 			.then((result) => {
@@ -31,14 +33,18 @@ const useFirebase = () => {
 			})
 			.catch((error) => {
 				setError(error);
-			});
+			})
+			.finally(() => setLoading(false));
+			
 	};
 	
 
 	const logOut = () => {
 		signOut(auth).then(() => {
 			setUser({});
-		});
+		})
+		.finally(() => setLoading(false));
+		
 	};
 	// observe user
 	useEffect(() => {
@@ -46,7 +52,10 @@ const useFirebase = () => {
 			if (user) {
 				setUser(user);
 				const uid = user.uid;
+			}else{
+				setUser({});
 			}
+			setLoading(false);
 		});
 	}, []);
 

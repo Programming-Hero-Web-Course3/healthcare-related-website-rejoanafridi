@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import "./Service.css";
 import Services from "./Services";
-const Service = (service) => {
-	// const { id, name,  description, img, short } = service;
-	// console.log(name);
+const Service = () => {
+	const [data, setData] = useState([]);
+	console.log(data)
 
-	// console.log(service)
-	// const { name} = service;
-	// console.log(name)
-	console.log(service.data);
-	const service_data = service.data;
+	useEffect(() => {
+		fetch("service.json")
+			.then((res) => res.json())
+			.then((data) => setData(data));
+	}, []);
 
 	return (
 		<div>
@@ -20,11 +20,9 @@ const Service = (service) => {
 					Our <span>Service</span>{" "}
 				</h1>
 				<div className="items">
-					{/* {service_data.map((s) => (
+					{data.map((s) => (
 						<Services key={s.id} serv={s}></Services>
-					))} */}
-
-					
+					))}
 				</div>
 			</section>
 		</div>

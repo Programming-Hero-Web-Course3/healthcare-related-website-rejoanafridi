@@ -11,18 +11,17 @@ const Home = () => {
 		<div>
 			
 			
-			<section className="banner">
-				<div className="b_image">
+			<section className="row banner">
+				<div className="col b_image">
 					<img src={bannerImg} alt="" />
 				</div>
-				<div className="banner-contents">
+				<div className="col banner-contents">
 					<div className="content">
-						<h2>Stay <span>Home</span>, Stay Safe</h2>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
-							cumque eius. Quibusdam sapiente eum soluta!
-						</p>
-						<button type="button" className='b-btn'>See More</button>
+						<h1>A Modern  <span>Clinic</span>  In your City Now,,</h1>
+						<h3>
+							We are Offering <span>70% Discount</span> in every Medical Test. 
+						</h3>
+						<button type="button" className='b-btn'>Booking Now</button>
 					</div>
 				</div>
 			</section>

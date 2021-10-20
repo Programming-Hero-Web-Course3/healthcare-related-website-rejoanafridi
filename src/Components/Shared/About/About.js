@@ -15,8 +15,8 @@ const about = () => {
 					</div>
 					<div className="about">
 						<div>
-                                   <h1>We Take Care of <br /> your Healthy</h1>
-                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat sed earum mollitia <br /> non libero repellat magnam placeat pariatur odio inventore.</p>
+                                   <h1>We believe in equity<br />We Take Care of your Health</h1>
+                                   <p></p>
                                    <button className="btn btn-sm btn-danger text-white " >
                                         learn more <i class="fas fa-angle-right"> </i>
                                    </button>
